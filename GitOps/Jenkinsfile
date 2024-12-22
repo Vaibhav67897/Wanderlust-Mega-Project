@@ -117,7 +117,7 @@ pipeline {
                     </body>
                     </html>
             """,
-            to: 'vaibhsroy96@gmail.com',
+            to: 'wasnikvaibhav067@gmail.com',  
             mimeType: 'text/html'
             }
         }
