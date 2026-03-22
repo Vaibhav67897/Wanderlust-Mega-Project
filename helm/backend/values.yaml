@@ -1,0 +1,35 @@
+replicaCount: 1
+
+image:
+  repository: trainwithshubham/wanderlust-backend-beta
+  tag: v2.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 31100
+
+labels:
+  app: backend
+
+# optional (future safe)
+ingress:
+  enabled: false
+
+autoscaling:
+  enabled: false
+
+serviceAccount:
+  create: false
+
+backend:
+  resources:  # ← Backend ke liye ye add/update karo
+    limits:
+      cpu: 1000m       # API heavy, zyada CPU
+      memory: 1Gi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+
